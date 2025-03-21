@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Travel Agency 2025</title>
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #8e96963f;
+}
+
+header {
+    background-color: #1a2d42; 
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.logo {
+    max-width: 150px; 
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 20px; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease; 
+}
+
+nav a:hover {
+    color: #3498DB; 
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    nav {
+        margin-top: 10px; 
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.left-side {
+    width: 25%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-side {
+    width: 70%;
+    padding: 20px;
+}
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.left-side {
+    background-color: #f4f4f4;  
+}
+
+input:hover, select:hover {
+    background-color: #f0f8ff;  
+}
+
+.confirmation-box {
+    background-color: #42bd5f; 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 6px;
+    max-width: 300px;
+    width: 100%; 
+    margin: 20px auto;
+    text-align: center;
+    font-size: 14px; 
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+#confirmationMessage {
+    display: none; 
+    animation: fadeIn 0.5s ease-out forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #3498DB; 
+    transform: scale(1.05);  
+}
+
+.form-media-container {
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-media-container .media-item {
+    width: 100%; 
+    text-align: center;
+}
+
+.form-media-container video {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;  
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-media-container img {
+    width: 80%; 
+    background-color: white; 
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-media-container .form-gif {
+    width: 100%;
+    height: 280px; 
+    background-color: white; 
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form-media-container .partners-text {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2980B9;  
+}
+
+.form-media-container video:hover,
+.form-media-container img:hover,
+.form-media-container .form-gif:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.form-media-container a {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #2980B9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-media-container a:hover {
+    color: #3498DB;
+}
+
+
+.tour-package {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.package-box {
+    width: calc(40% - 15px); 
+    padding: 20px;  
+    background-color: transparent; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(97, 144, 152, 0.534);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; 
+}
+
+.package-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.package-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.package-box:hover img {
+    transform: scale(1.1);
+}
+
+.package-box h3 {
+    margin-top: 10px;
+    color: #2980B9;
+}
+
+.package-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+.package-box .details {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.package-box a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2980B9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.package-box a:hover {
+    background-color: #3498DB;
+}
+
+@media (max-width: 768px) {
+    .package-box {
+        width: 100%;
+    }
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+
+    .form-media-container {
+        flex-direction: column;
+    }
+
+    .form-media-container .media-item {
+        width: 100%;
+    }
+}
+
+footer {
+    background: #1e2a3a;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f3f1f1;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+footer .footer-form {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+footer .footer-form input[type="text"],
+footer .footer-form input[type="email"] {
+    padding: 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    background-color: #f4f4f4;
+}
+
+footer .footer-form button {
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer .footer-form button:hover {
+    background-color: #0056b3;
+}
+
+footer .footer-follow {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+footer .footer-follow .social-icon {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer .footer-follow .social-icon img {
+    width: 35px;
+    height: auto;
+}
+
+footer .footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer iframe {
+    margin-top: 20px;
+    border: 0;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-media-container {
+        flex: 1 1 100%;
+    }
+
+    .right-side {
+        flex: 1 1 100%;
+    }
+
+    .package-box {
+        flex: 1 1 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Best Travel Agency 2025</h1>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="packages.html">Tour Packages</a>
+        <a href="offers.html">Offers</a>
+        <a href="transport.html">Transport</a>
+        <a href="about.html">About Us</a>
+        <a href="giftcard.html" class="giftcard-btn">Gift Card</a>
+    </nav>
+    </header>
+    <div class="container">
+        <div class="left-side">
+            <h2>Book Your Tour</h2>
+            <form id="bookingForm">
+                <label for="tourName">Tour Name</label>
+                <input type="text" id="tourName" name="tourName" required placeholder="Enter tour name">
+                
+                <label for="yourEmail">Your Email</label>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <label for="guestCount">Number of Guests</label>
+                <input type="number" id="guestCount" name="guestCount" required placeholder="Enter number of guests">
+
+                <label for="tourDate">Tour Date</label>
+                <input type="date" id="tourDate" name="tourDate" required>
+
+                <label for="transport">Choose Transport</label>
+                <select id="transport" name="transport" required>
+                    <option value="bus">Bus</option>
+                    <option value="plane">Plane</option>
+                </select>
+                <button type="submit">Submit Booking</button>
+            </form>
+<div id="confirmationMessage" style="display:none;">
+    <div class="confirmation-box">
+        <p>Your booking has been received! You will get a confirmation email shortly.</p>
+    </div>
+</div>
+
+        <div class="form-media-container">
+            <div class="media-item">
+                <video controls>
+                    <source src="C:\Users\arjan\Downloads\WhatsApp Video 2024-12-21 at 6.29.10 PM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="form-media-container">
+    <div class="media-item">
+        <p class="partners-text">Our Partners</p>
+    </div>
+</div>
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        document.getElementById('confirmationMessage').style.display = 'block';
+
+        document.getElementById('bookingForm').reset();
+    });
+</script>
+
+            </div>
+            <div class="media-item">
+                <img src="https://logos-download.com/wp-content/uploads/2016/04/Booking-com-logo-logotype.png" alt="Tour Package Image">
+            </div>
+            <div class="media-item">
+                <img src="https://hanipazarit.al/wp-content/uploads/2023/03/logo-300x168.png" alt="Tour Package Image">
+            </div>
+            <div class="media-item">
+                <img src="https://s.yimg.com/fz/api/res/1.2/MY2mdDJkKR3IeWaCY8gTVA--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI0MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/e8a24dda-c0bd-3097-b144-084cd5d7e2f8/t_500x300" alt="Tour Package Image">
+            </div>
+            <div class="media-item">
+                <img src="https://www.ch-aviation.com/images/stockPhotos/7197/252694382bb56230469740fc98681005c26e21f5.png" alt="Tour Package Image">
+            </div>
+            <div class="media-item">
+                <img src="https://lequartierhotelbs.com/_img/logo-desktop.svg" alt="Tour Package Image">
+            </div>
+            <div class="media-item">
+                <img src="https://pontaplaza.me/wp-content/uploads/2024/03/Ponta-Plaza-logo-1.svg" alt="Tour Package Image">
+            </div>
+        </div>       
+<div class="form-media-container">
+    <div class="media-item">
+        <img src="https://media3.giphy.com/media/LSL5oY5sdt75zm8uk6/giphy.gif?cid=6c09b9527lrbzzzz537vlyd8f47bml9u83fwa920gc89hmry&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="Image Description">
+    </div>
+
+<div class="media-item">
+        <img class="form-gif" src="https://cdn.dribbble.com/users/730703/screenshots/3799062/wsj.gif" alt="Loading GIF 1">
+    </div>
+    <div class="media-item">
+        <img class="form-gif" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/87356c77204955.5c80b796cc5fe.gif" alt="Loading GIF 2" style="display:none;">
+    </div>
+    <div class="media-item">
+        <img class="form-gif" src="https://kleesto.com/wp-content/uploads/woman-at-desk-with-laptop-successfully-books-a-flight-on-her-smartphone-using-kleesto.-kleesto.gif" alt="Loading GIF 3" style="display:none;">
+    </div>
+    <div class="media-item">
+        <img class="form-gif" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/54e3e877204955.5c80b796ccbe7.gif" alt="Loading GIF 4" style="display:none;">
+    </div>
+</div>
+<script>
+window.onload = function() {
+    var gifs = document.querySelectorAll('.form-gif');
+    var currentGifIndex = 0; 
+    if (gifs.length > 0) {
+        function changeGif() {
+            gifs[currentGifIndex].style.display = 'none';
+            
+            currentGifIndex = (currentGifIndex + 1) % gifs.length;
+            
+            gifs[currentGifIndex].style.display = 'block';
+        }
+        
+        setInterval(changeGif, 3000);
+    }
+};
+</script>
+</div>
+
+    <div class="right-side">
+        <h2>Tour Packages</h2>
+       <h3>Bus Tours</h3>
+        <div class="tour-package">
+            <div class="package-box">
+                <img src="https://i.pinimg.com/originals/af/ad/e6/afade687d8918e56f687e24b700ffdad.jpg" alt="Ujevara-Peje">
+                <h3>Ujevara - Peje</h3>
+                <p>Explore the breathtaking waterfalls and mountains.</p>
+                <div class="details">We visit the waterfall each morning, enjoy local cuisine for lunch, and relax at our 5-star hotel with spa treatments in the evening.</div>
+                <a href="https://www.booking.com/searchresults.hr.html?aid=357029&label=yho748jc-1DCAsogQJCHHJlc29ydC11amV2YXJhLWUtZHJpbml0LXBlamVIEFgDaAaIAQGYARC4ARfIAQzYAQPoAQH4AQKIAgGoAgO4AsaZi7sGwAIB0gIkODM5MzdhNGYtNjU2NS00MmFiLWE3NGQtYWFjYzA5MDRkYWEy2AIE4AIB&highlighted_hotels=4930853&redirected=1&city=900050010&hlrd=user_sh&source=hotel&expand_sb=1&keep_landing=1&sid=1dc5551ca26c738dba7e74152ed75bd8s" target="_blank">Learn More</a>
+            </div>
+            <div class="package-box">
+                <img src="https://i.ytimg.com/vi/fQfPjmSwxA4/maxresdefault.jpg" alt="Marovo-Struge">
+                <h3>Marovo Struge</h3>
+                <p>Perfect blend of culture and nature.</p>
+                <div class="details">Discover the beautiful lakes, hike in the mountains, and enjoy evening performances.</div>
+                <a href="https://images.search.yahoo.com/search/images;_ylt=AwrFcrWXzWJnYAIAsQ9XNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=struge&fr2=piv-web&type=E210US91215G0&fr=mcafee" target="_blank">Learn More</a>
+            </div>
+            <div class="package-box">
+                <img src="https://i.ytimg.com/vi/ny_GQQHUEvo/maxresdefault.jpg" alt="Korce">
+                <h3>Korce</h3>
+                <p>A city full of history and charm.</p>
+                <div class="details">Tour the famous Korça museums, enjoy traditional Albanian dinners, and relax with local wines.</div>
+                <a href="https://hanipazarit.al/" target="_blank">Learn More</a>
+            </div>
+        </div>
+        <div class="tour-package">
+            <div class="package-box">
+                <img src="https://www.visitalbania.app/wp-content/uploads/2022/07/valbona-tourism-7.jpg" alt="Valbone">
+                <h3>Valbone</h3>
+                <p>Majestic mountain escapes.</p>
+                <div class="details">Spend your day trekking the Valbona Valley and visit hidden waterfalls.</div>
+                <a href="https://www.booking.com/hotel/al/villas-jezerca.en-gb.html?aid=2369661&label=msn-3NEAINB8HXEaS4CWea9dsA-79989658705805%3Atikwd-79989834233423%3Aloc-1%3Aneo%3Amte%3Alp138178%3Adec%3AqsBOOKING&sid=1dc5551ca26c738dba7e74152ed75bd8&all_sr_blocks=474189709_273598617_3_1_0_259121&checkin=2025-01-02&checkout=2025-01-03&dest_id=-107961&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=474189709_273598617_3_1_0_259121&hpos=2&matching_block_id=474189709_273598617_3_1_0_259121&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=474189709_273598617_3_1_0_259121_6000&srepoch=1734528734&srpvid=dae65f2cbc5d0eed&type=total&ucfs=1&" target="_blank">Learn More</a>
+            </div>
+            <div class="package-box">
+                <img src="https://kolasin.me/wp-content/uploads/2019/06/1-4-1.jpg" alt="Kolasin-Podgorice">
+                <h3>Kolasin - Podgorice</h3>
+                <p>Explore Montenegro’s hidden gems.</p>
+                <div class="details">Trek in the lush forests, visit local monasteries, and enjoy an evening of traditional Montenegrin music.</div>
+                <a href="https://www.booking.com/hotel/me/dream-house-kolasin.en-gb.html?aid=2369661&label=msn-3NEAINB8HXEaS4CWea9dsA-79989658705805%3Atikwd-79989834233423%3Aloc-1%3Aneo%3Amte%3Alp138178%3Adec%3AqsBOOKING&sid=1dc5551ca26c738dba7e74152ed75bd8&all_sr_blocks=535562209_363571485_0_1_0_365012&checkin=2025-01-02&checkout=2025-01-03&dest_id=-84862&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=535562209_363571485_0_1_0_365012&hpos=2&matching_block_id=535562209_363571485_0_1_0_365012&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=535562209_363571485_0_1_0_365012_12000&srepoch=1734528857&srpvid=28165f60d2790154&type=total&ucfs=1&" target="_blank">Learn More</a>
+            </div>
+            <div class="package-box">
+                <img src="https://images.squarespace-cdn.com/content/608b985238815e50eb27659a/0ce1a6e6-d7f1-4069-8f49-507ecc89a768/9591EFB3-2FD2-41D0-9AF8-523758B13777.jpg?content-type=image%2Fjpeg" alt="Budva">
+                <h3>Budva</h3>
+                <p>Coastal city with an unforgettable nightlife.</p>
+                <div class="details">Relax on the beautiful beaches, enjoy historic tours, and experience vibrant nightlife.</div>
+                <a href="https://www.booking.com/hotel/me/ponta-plaza.en-gb.html?aid=2369661&label=msn-3NEAINB8HXEaS4CWea9dsA-79989658705805%3Atikwd-79989834233423%3Aloc-1%3Aneo%3Amte%3Alp138178%3Adec%3AqsBOOKING&sid=2ae3f953478f2d4c46fa6eb05966531a&all_sr_blocks=1195469803_396021812_2_33_0&checkin=2025-01-02&checkout=2025-01-03&dest_id=900039384&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=1195469803_396021812_2_33_0&hpos=2&matching_block_id=1195469803_396021812_2_33_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1195469803_396021812_2_33_0__17800&srepoch=1734810259&srpvid=eaf08ac566c600c7&type=total&ucfs=1&" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <h3>Airplane Tours</h3>
+        <div class="tour-package">
+            <div class="package-box">
+                <img src="https://mediaim.expedia.com/localexpert/649782/5be0e034-32f2-4604-9342-820053d223a1.jpg" alt="Dubrovnik">
+                <h3>Dubrovnik</h3>
+                <p>Fly to this stunning coastal city.</p>
+                <div class="details">Explore the Old Town, visit the city walls, and enjoy a boat tour of the islands.</div>
+                <a href="https://www.booking.com/hotel/hr/hotelexcelsiordubrovnik.en-gb.html?aid=2369661&label=msn-3NEAINB8HXEaS4CWea9dsA-79989658705805%3Atikwd-79989834233423%3Aloc-1%3Aneo%3Amte%3Alp138178%3Adec%3AqsBOOKING&sid=1dc5551ca26c738dba7e74152ed75bd8&all_sr_blocks=1971615_360937794_0_1_0_559808&checkin=2025-01-02&checkout=2025-01-03&dest_id=510&dest_type=airport&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1971615_360937794_0_1_0_559808&hpos=1&matching_block_id=1971615_360937794_0_1_0_559808&nflt=hotelfacility%3D433%3Bht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1971615_360937794_0_1_0_559808_29880&srepoch=1734529159&srpvid=4f245fe632e40335&type=total&ucfs=1&" target="_blank">Learn More</a>
+            </div>
+            <div class="package-box">
+                <img src="https://s3.amazonaws.com/com.vertoe.blog/blog/wp-content/uploads/2021/06/16032615/pexels-mikhail-nilov-8430474.jpg" alt="Paris">
+                <h3>Paris</h3>
+                <p>The City of Lights.</p>
+                <div class="details">Visit iconic landmarks like the Eiffel Tower, Notre-Dame, and enjoy world-class cuisine and shopping.</div>
+                <a href="https://www.booking.com/hotel/fr/hoteldereuillyparis.en-gb.html?aid=2369661&label=msn-3NEAINB8HXEaS4CWea9dsA-79989658705805%3Atikwd-79989834233423%3Aloc-1%3Aneo%3Amte%3Alp138178%3Adec%3AqsBOOKING&sid=1dc5551ca26c738dba7e74152ed75bd8&all_sr_blocks=5110714_94272258_0_2_0&checkin=2025-01-02&checkout=2025-01-03&dest_id=-1456928&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=5110714_94272258_0_2_0&hpos=5&matching_block_id=5110714_94272258_0_2_0&nflt=ht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=5110714_94272258_0_2_0__11232&srepoch=1734529243&srpvid=334660254f9f021e&type=total&ucfs=1&" target="_blank">Learn More</a>
+            </div>
+            <div class="package-box">
+                <img src="https://static.vecteezy.com/ti/photos-gratuite/p2/19876777-aerien-vue-de-barcelone-ville-horizon-et-sagrada-familia-cathedrale-a-le-coucher-du-soleil-photo.jpg" alt="Barcelona">
+                <h3>Barcelona</h3>
+                <p>Enjoy the vibrant culture of Catalonia.</p>
+                <div class="details">Visit the stunning architecture of Gaudí, relax on the beaches, and enjoy lively tapas evenings.</div>
+                <a href="https://www.booking.com/hotel/es/hotel.en-gb.html?aid=2369661&label=msn-3NEAINB8HXEaS4CWea9dsA-79989658705805%3Atikwd-79989834233423%3Aloc-1%3Aneo%3Amte%3Alp138178%3Adec%3AqsBOOKING&sid=1dc5551ca26c738dba7e74152ed75bd8&all_sr_blocks=9167501_95123720_0_34_0&checkin=2025-01-02&checkout=2025-01-03&dest_id=-372490&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=7&highlighted_blocks=9167501_95123720_0_34_0&hpos=7&matching_block_id=9167501_95123720_0_34_0&nflt=ht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=9167501_95123720_0_34_0__21060&srepoch=1734529303&srpvid=577c60434e140dc1&type=total&ucfs=1&" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </div> 
+</div> 
+    <footer>
+        <h1>Sunset Travel</h1>
+        <p class="footer-contact">Contact Us: 📞 +355 694567367</p>
+        <form class="footer-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p class="footer-follow">
+            Follow Us:
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+            </a>
+        </p>
+        <p class="footer-links">
+            <a href="home2.html">Terms and Conditions</a>
+        </p>
+        <p>&copy; Sunset Travel. Book a Unique Experience!</p>
+     <div class="footer-links">
+        <p>Make a Payment</p>
+        <a href="payment.html" target="_blank" class="payment-btn">
+           Tap and pay now
+            </a>
+    </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.108158390164!2d19.805557!3d41.340309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310c82160835%3A0xf0338e109bdc8335!2sKolegji%20Universitar%20Bed%C3%ABr!5e0!3m2!1sen!2sus!4v1734642230026!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </footer>
+</body>
+</html>
+
+
+

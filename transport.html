@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet - Travel Agency</title>
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-bottom: 60px; 
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #3d6791;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin-top: 0;
+}
+        .reviews-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 200px; 
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reviews-container h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            display: none;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .review-item .reviewer {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .review-item .vehicle {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .review-item .stars {
+            color: gold;
+            font-size: 1.2rem;
+        }
+
+        .reviews-container .review-item.active {
+            display: block;
+        }
+
+        .reviews-container .review-item {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+nav {
+    background-color: #3d6791;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+.vehicle-box {
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(145deg, #6388ac, #34495e);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.vehicle-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #2980B9;
+}
+
+.vehicle-box img {
+    width: 100%; 
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.vehicle-box:hover img {
+    transform: scale(1.1);
+}
+
+.vehicle-box h3 {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.vehicle-box p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.vehicle-box .details {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.vehicle-box a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #2980B9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.vehicle-box a:hover {
+    background-color: #3498DB;
+    transform: scale(1.1);
+}
+
+footer {
+    background: #1e2a3a;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+footer h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f3f1f1;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+footer .footer-form {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+footer .footer-form input[type="text"],
+footer .footer-form input[type="email"] {
+    padding: 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+footer .footer-form input[type="text"]:focus,
+footer .footer-form input[type="email"]:focus {
+    background-color: #ecf0f1;
+}
+
+footer .footer-form button {
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+footer .footer-follow {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+footer .footer-follow .social-icon {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer .footer-follow .social-icon img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-follow .social-icon img:hover {
+    transform: scale(1.2);
+}
+
+footer .footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #f39c12;
+}
+
+footer iframe {
+    margin-top: 20px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vehicle-box {
+        width: 90%;
+    }
+
+    nav img {
+        width: 50px;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+}
+    </style>
+</head>
+<body>
+</style>
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="https://www.hazmieh.com/wp-content/uploads/travel-1.png" alt="Sunset Travel Logo">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Tour Packages</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="giftcard.html" class="giftcard-btn">Gift Card</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Our Fleet - Vans & Buses</h1>
+    <p>Explore the Luxury and Comfort of Our Vehicles</p>
+</header>
+
+<div class="container">
+    <div class="vehicle-box">
+        <img src="https://i.pinimg.com/originals/56/1a/fe/561afeafc2b10e75c616b55341fa835d.png" alt="Mercedes-Benz Bus">
+        <h3>Mercedes-Benz Coach Bus</h3>
+        <p>Comfort, luxury, and reliability in every journey.</p>
+        <div class="details">Seats: 50 | Fully Air-conditioned | Reclining Seats | Entertainment System</div>
+        <a href="https://www.mercedes-benz.com" target="_blank">Learn More</a>
+    </div>
+
+    <div class="vehicle-box">
+        <img src="https://www.pngkey.com/png/full/249-2490216_volvo.png" alt="Volvo Bus">
+        <h3>Volvo Luxury Coach</h3>
+        <p>Explore the world in the lap of luxury with Volvo.</p>
+        <div class="details">Seats: 48 | WiFi Enabled | Panoramic Windows | Restroom Facilities</div>
+        <a href="https://www.volvo.com/en/" target="_blank">Learn More</a>
+    </div>
+
+    <div class="vehicle-box">
+        <img src="https://www.pikpng.com/pngl/b/363-3639407_renta-de-transporte-df-mercedes-benz-sprinter-clipart.png" alt="Mercedes-Benz Van">
+        <h3>Mercedes-Benz Sprinter Van</h3>
+        <p>The perfect van for small group travel with comfort and style.</p>
+        <div class="details">Seats: 15 | Air-conditioning | Spacious Interior | High Roof</div>
+        <a href="https://www.mercedes-benz.com" target="_blank">Learn More</a>
+    </div>
+
+    <div class="vehicle-box">
+        <img src="https://buildfoc.ford.com/dig/Ford/Transit%20VanWagon/2024/HD-TILE/Image%5B%7CFord%7CTransit%20VanWagon%7C2024%7C1%7C1.%7C302A.X2Y.148.PYZ..88C.89K.LRL.A6KAP.XLT.20J.18D.67E.BB1AA.16H.85C.41B.90B.21L.BAF.CS2.~CA%23KA_SE%23B8.53G.51D.SRW.64H.TC8.41H.RWD.998.FAJAC.57G.GB2AB.65D.FLE.60C.HIAAB.65A.43R.59B.94A.HTAAB.SAA.HUAAB.58B.IDBAM.61E.62D.91B.55D.18A.15F.JDAAB.BS4.44U.17F.X73.DPM.CLO.WAL.%5D/EXT/1/vehicle.png" alt="Ford Transit Van">
+        <h3>Ford Transit Van</h3>
+        <p>Efficient and spacious van for your group’s journey.</p>
+        <div class="details">Seats: 12 | Air-conditioning | Large Cargo Space | Comfortable Seats</div>
+        <a href="https://www.ford.com" target="_blank">Learn More</a>
+    </div>
+
+</div>
+
+<div class="reviews-container">
+    <h2>Customer Reviews</h2>
+
+    <div class="review-item active">
+        <div class="reviewer">Andi Boro </div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="vehicle">Mercedes-Benz Coach Bus</div>
+    </div>
+    <div class="review-item">
+        <div class="reviewer">Lori Sopi</div>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <div class="vehicle">Volvo Luxury Coach</div>
+    </div>
+    <div class="review-item">
+        <div class="reviewer">Suajb Ceci</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="vehicle">Ford Transit Van</div>
+    </div>
+    <div class="review-item">
+        <div class="reviewer">Emma Rama</div>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <div class="vehicle">Mercedes-Benz Sprinter Van</div>
+    </div>
+</div>
+
+<footer>
+    <h1>Sunset Travel</h1>
+    <p class="footer-contact">Contact Us: 📞 +355 69 456 7367</p>
+    <form class="footer-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p class="footer-follow">
+        Follow Us:
+        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+        </a>
+    </p>
+    <p class="footer-links">
+        <a href="home2.html">Terms and Conditions</a>
+    </p>
+    <p>&copy; Sunset Travel. Book a Unique Experience!</p>
+    <div class="footer-links">
+        <p>Make a Payment</p>
+        <a href="payment.html" target="_blank" class="payment-btn">
+            Tap and pay now
+        </a>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.108158390164!2d19.805557!3d41.340309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310c82160835%3A0xf0338e109bdc8335!2sKolegji%20Universitar%20Bed%C3%ABr!5e0!3m2!1sen!2sus!4v1734642230026!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const reviews = document.querySelectorAll('.review-item');
+    let currentIndex = 0;
+
+    function showNextReview() {
+        reviews[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % reviews.length;
+        reviews[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextReview, 3000); 
+});
+</script>
+</body>
+</html>

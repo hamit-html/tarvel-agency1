@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sunset Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: white;
+            background-color: #2c3e50; 
+            padding-top: 60px; 
+        }
+
+        nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0); 
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #fff; 
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ff8000;
+}
+
+nav .logo {
+    position: absolute;
+    max-width: 150px; 
+    left: 20px;
+    top: 20px;
+}
+
+nav .logo img {
+    height: 60px; 
+}
+
+        .header {
+            position: relative;
+            height: 760px;
+            background-image: url("https://elements-resized.envatousercontent.com/envato-shoebox/daa3/59e7-0540-4d4d-bbcc-d78b92a3d338/0G2A0015.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=bc1acd40113bc7b36f894daea407fbf8d663819395db7586223c0494dbd1ee16"); /* Your header photo */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
+        }
+
+        /* History Section */
+        .history {
+            background-color: #1a252f; 
+            padding: 3rem;
+            color: white;
+            text-align: center;
+            border-top: 5px solid #3498DB; 
+        }
+
+        .history h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #3498DB; 
+        }
+
+        .history p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            background-color: #34495e; 
+            padding: 3rem;
+            text-align: center;
+            border-top: 5px solid #95a5a6; 
+        }
+
+        .why-us h2 {
+            font-size: 2.8rem;
+            color: white; 
+            margin-bottom: 2rem;
+        }
+
+        .why-us .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .feature {
+            background: #1a252f; 
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #3498DB; 
+        }
+
+        .feature p {
+            font-size: 1.1rem;
+        }
+
+        .feature:hover {
+            background-color: #3498DB; 
+            color: white; 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+        }
+
+        .mission {
+            background: #fcfcfc; 
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 2.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .mission div {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .mission div span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498DB; 
+        }
+
+        .mission .years {
+            color:#3498db;
+        }
+
+        .mission .text {
+            color: #3498db; 
+        }
+      .reviews-section {
+            background-color: #34495e;
+            padding: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .review-box {
+            background-color: #1a252f;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 1rem auto;
+            width: 80%;
+            max-width: 800px;
+            display: none; 
+        }
+
+        .review-box p {
+            font-size: 1.1rem;
+        }
+        /* Footer */
+        footer {
+            background: #1e2a3a;
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        footer h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f3f1f1;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        footer .footer-form {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-form input[type="text"],
+        footer .footer-form input[type="email"] {
+            padding: 12px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+            background-color: #f4f4f4;
+        }
+
+        footer .footer-form button {
+            padding: 12px 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer .footer-form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer .footer-follow {
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+
+        footer .footer-follow .social-icon {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        footer .footer-follow .social-icon img {
+            width: 35px;
+            height: auto;
+        }
+
+        footer .footer-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer iframe {
+            margin-top: 20px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .vehicle-box {
+                width: 90%;
+            }
+
+            nav img {
+                width: 50px;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <nav>
+        <div class="logo">
+        <img src="https://www.hazmieh.com/wp-content/uploads/travel-1.png" alt="Sunset Travel Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Tour Packages</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="giftcard.html" class="giftcard-btn">Gift Card</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Welcome to Sunset Travel</h1>
+    </div>
+
+    <section class="history" id="about">
+        <h2>Our History</h2>
+        <p>
+            Founded over 30 years ago, Sunset Travel has been at the forefront of providing unforgettable travel experiences. 
+            Our dedication to exceptional service, unique itineraries, and customer satisfaction has made us one of the most trusted travel agencies worldwide.
+        </p>
+    </section>
+
+    <section class="why-us" id="services">
+        <h2>Why Us?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Professional Staff</h3>
+                <p>Our expert team ensures you have a smooth and enjoyable journey.</p>
+            </div>
+            <div class="feature">
+                <h3>Safe</h3>
+                <p>Safety is our priority at every step of your adventure.</p>
+            </div>
+            <div class="feature">
+                <h3>Low Cost</h3>
+                <p>We provide the best value for your money without compromising quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div><span class="years">+30</span> <span class="text">Years</span></div>
+        <div><span class="years">+30</span> <span class="text">Places</span></div>
+        <div><span class="years">+50,000</span> <span class="text">Clients Per Year</span></div>
+    </section>
+     <section class="reviews-section" id="reviews">
+        <h2>What Our Customers Are Saying</h2>
+
+        <div id="review-list">
+        </div>
+    </section>
+
+    <script>
+        const reviews = [
+            {
+                name: "Andi Zylali",
+                comment: "Sunset Travel provided us with an amazing experience! Highly recommend their services."
+            },
+            {
+                name: "Lorjana Kokonozi",
+                comment: "Fantastic service! The trip was smooth and unforgettable."
+            },
+            {
+                name: "Eklea Jaupaj",
+                comment: "Great experience, friendly staff, and everything went according to plan!"
+            },
+            {
+                name: "Suajb Prethi",
+                comment: "I had a wonderful time with Sunset Travel. Highly recommended for anyone looking for a reliable travel agency."
+            }
+        ];
+
+        function displayReview(index) {
+            const reviewList = document.getElementById('review-list');
+            reviewList.innerHTML = '';  
+
+            const reviewBox = document.createElement('div');
+            reviewBox.classList.add('review-box');
+            reviewBox.innerHTML = `
+                <p><strong>${reviews[index].name}</strong></p>
+                <p>${reviews[index].comment}</p>
+            `;
+            reviewList.appendChild(reviewBox);
+            reviewBox.style.display = 'block'; 
+        }
+
+        let currentReviewIndex = 0;
+        function cycleReviews() {
+            displayReview(currentReviewIndex);
+            currentReviewIndex = (currentReviewIndex + 1) % reviews.length;  
+        }
+
+        setInterval(cycleReviews, 3000);
+
+        displayReview(currentReviewIndex);
+
+    </script>
+
+  <footer>
+    <h1>Sunset Travel</h1>
+    <p class="footer-contact">Contact Us: 📞 +355 69 456 7367</p>
+    <form class="footer-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p class="footer-follow">
+        Follow Us:
+        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+        </a>
+    </p>
+    <p class="footer-links">
+        <a href="home2.html">Terms and Conditions</a>
+    </p>
+    <p>&copy; Sunset Travel. Book a Unique Experience!</p>
+    <div class="footer-links">
+        <p>Make a Payment</p>
+        <a href="payment.html" target="_blank" class="payment-btn">
+            Tap and pay now
+        </a>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.108158390164!2d19.805557!3d41.340309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310c82160835%3A0xf0338e109bdc8335!2sKolegji%20Universitar%20Bed%C3%ABr!5e0!3m2!1sen!2sus!4v1734642230026!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card</title>
+    <style>
+        body {
+            background-color: #354e3b6c         ;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+
+
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #34495e(41, 128, 185, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+
+        nav .logo img {
+            height: 40px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 150px; 
+        }
+
+       
+        .gift-card-section {
+            background-color: rgba(255, 255, 255, 0.6); 
+            background-size: cover;
+            background-position: center;
+            width: 45%;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .gift-card-section:hover {
+            transform: scale(1.05);
+        }
+
+        .gift-card-section h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1d1d2c;
+            margin-bottom: 20px;
+        }
+
+        .gift-card-section p {
+            font-size: 18px;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        .gift-card-section ol {
+            text-align: left;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.6); 
+            padding: 30px;
+            width: 45%; 
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .form-container:hover {
+            transform: scale(1.05);
+        }
+
+        .form-container h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 90%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form-container input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .form-container label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            margin-top: 10px;
+            color: #2c3e50;
+        }
+
+        .form-container input[type="checkbox"]:focus {
+            outline: none;
+            border: 1px solid #34495E;
+        }
+
+        .form-container button {
+            background-color: #34495E ;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+     footer {
+    background: rgba(189, 184, 184, 0.13);; 
+    padding: 20px;
+    color: #fff; 
+    margin-top: 2rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+footer h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f3f1f1; 
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #fff; 
+}
+
+footer .footer-form {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+footer .footer-form input[type="text"],
+footer .footer-form input[type="email"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+footer .footer-form button {
+    padding: 10px 15px;
+    background-color: #8270cc54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer .footer-form button:hover {
+    background-color: #4c34d7ce;
+}
+
+footer .footer-follow {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+footer .footer-follow .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer .footer-follow .social-icon img {
+    width: 30px;
+    height: auto;
+}
+
+footer .footer-links a {
+    color: #161bae9f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+        @media (max-width: 900px) {
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gift-card-section,
+            .form-container {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="https://www.hazmieh.com/wp-content/uploads/travel-1.png" alt="Sunset Travel Logo">
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Tour Packages</a></li>
+        <li><a href="offers.html">Offers</a></li>
+         <li><a href="transport.html">Transport</a></li>
+         <li><a href="about.html">About Us</a></li>
+        <li><a href="giftcard.html" class="giftcard-btn">Gift Card</a></li>
+    </ul>
+</nav>
+
+<div class="content-container">
+    <div class="gift-card-section">
+        <h1>Want a Gift Card?</h1>
+        <p>If you need a special gift for a relative, friend, or colleague, our gift cards are the perfect choice.</p>
+        <h2>How to get your gift card:</h2>
+        <ol>
+            <li>Enter your first name and last name.</li>
+            <li>Enter your email address.</li>
+            <li>After completing the form, you will receive a unique code via email. This code can be used during the booking process for Sunset packages.</li>
+        </ol>
+        <p>Simple and Fast!</p>
+    </div>
+
+    <div class="form-container">
+        <h2>Gift Card Form</h2>
+        <form action="#" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            
+            <label>
+                <input type="checkbox" name="not_robot" required> I'm not a robot
+            </label>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form'); 
+    const submitButton = form.querySelector('button'); 
+    const formContainer = document.querySelector('.form-container'); 
+    const confirmationMessage = document.createElement('div');
+    confirmationMessage.style.display = 'none'; 
+    confirmationMessage.style.padding = '15px';
+    confirmationMessage.style.backgroundColor = '#f9f9f9';
+    confirmationMessage.style.border = '1px solid #ddd';
+    confirmationMessage.style.borderRadius = '5px';
+    confirmationMessage.style.color = '#2ecc71';
+    confirmationMessage.style.textAlign = 'center';
+    confirmationMessage.style.fontSize = '16px';
+    confirmationMessage.innerText = 'Your form has been submitted successfully!';
+
+    formContainer.appendChild(confirmationMessage);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        confirmationMessage.style.display = 'block';
+
+        form.reset();
+
+        submitButton.disabled = true;
+        submitButton.innerText = 'Submitted'; 
+    });
+});
+
+    </script>
+<footer>
+    <h1>Sunset Travel</h1>
+    <p class="footer-contact">Contact Us: 📞 +355 69 456 7367</p>
+    <form class="footer-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p class="footer-follow">
+        Follow Us:
+        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+        </a>
+    </p>
+    <p class="footer-links">
+        <a href="home2.html">Terms and Conditions</a>
+    </p>
+    <p>&copy; Sunset Travel. Book a Unique Experience!</p>
+ <div class="footer-links">
+    <p>Make a Payment</p>
+    <a href="payment.html" target="_blank" class="payment-btn">
+       Tap and pay now
+        </a>
+</div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.108158390164!2d19.805557!3d41.340309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310c82160835%3A0xf0338e109bdc8335!2sKolegji%20Universitar%20Bed%C3%ABr!5e0!3m2!1sen!2sus!4v1734642230026!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</footer>
+</body>
+</html>

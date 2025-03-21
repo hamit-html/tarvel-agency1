@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Offers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #e1e2e3; 
+            color: #fff;
+            line-height: 1.6;
+            scroll-behavior: smooth; 
+        }
+        
+        header {
+            text-align: center;
+            background: rgba(13, 36, 81, 0.914);
+            color: white;
+            padding: 1.0rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo {
+            width: 150px; 
+            height: auto; 
+            margin-bottom: 1rem; 
+            max-width: 100%; 
+        }
+        header img {
+            height: 130px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            header .logo {
+                width: 120px; 
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+
+        .advertisement-banner {
+            background-color: #6989A0; 
+            color: white;
+            text-align: center;
+            padding: 0.4rem 0.8rem; 
+            margin-bottom: 1rem;
+            font-size: 1.1rem; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease; 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px; 
+        }
+
+        .advertisement-banner .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: white;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .advertisement-banner .close-btn:hover {
+            color: #BB5555;
+        }
+
+        .advertisement-banner:hover {
+            background-color: rgba(38, 0, 255, 0.8); 
+            transform: translate(-50%, -50%) scale(1.02); 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+        }
+
+        .advertisement-banner p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e1e2e3; ; 
+            padding: 1.2rem 0;
+        }
+  
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: rgb(10, 1, 1);
+            text-decoration: none;
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #001eff; 
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .offer-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            height: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .offer-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .offer-content {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            color: #fff;
+            width: 100%;
+            backdrop-filter: blur(5px);
+        }
+
+        .offer-content h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .offer-content p {
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+
+        .offer-content button {
+            background: #e81a1a00;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+       
+      footer {
+    background: #1e2a3a;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f3f1f1;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+footer .footer-form {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+footer .footer-form input[type="text"],
+footer .footer-form input[type="email"] {
+    padding: 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    background-color: #f4f4f4;
+}
+
+footer .footer-form button {
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer .footer-form button:hover {
+    background-color: #0056b3;
+}
+
+footer .footer-follow {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+footer .footer-follow .social-icon {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer .footer-follow .social-icon img {
+    width: 35px;
+    height: auto;
+}
+
+footer .footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer iframe {
+    margin-top: 20px;
+    border: 0;
+    border-radius: 10px;
+}
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .vehicle-box {
+                width: 90%;
+            }
+
+            nav img {
+                width: 50px;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://www.hazmieh.com/wp-content/uploads/travel-1.png" alt="Sunset Travel Logo">
+        <h1>Catch the current offers</h1>
+        <p>Explore amazing destinations with the best price!</p>
+    </header>
+
+    <div id="advertisement-banner" class="advertisement-banner">
+        <span class="close-btn">&times;</span>
+        <p>Special Offer: Book now and get an additional 10% discount!</p>
+        <p>Call: 📞 +355 69 456 7367</p>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Tour Packages</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="transport.html">Transport</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="giftcard.html" class="giftcard-btn">Gift Card</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="offers-container">
+            <div class="offer-card" style="background-image: url('https://www.homeinitaly.com/_data/magazine/articles/2022-01-venice-carnival-2022/venice-carnival-2022-7.jpeg');">
+                <div class="offer-content">
+                    <h2>Carnival in Venice</h2>
+                    <p><strong>Price:</strong> €329</p>
+                    <p><strong>Duration:</strong> 3 Days</p>
+                    <p><strong>Hotel:</strong> 3★ Hotel</p>
+                    <p><strong>Included:</strong> Transport, Tours, Taxes</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://images.huffingtonpost.com/2012-12-11-NYCfireworks2.jpg');">
+                <div class="offer-content">
+                    <h2>New Year 2025 New-york</h2>
+                    <p><strong>Price:</strong> €859</p>
+                    <p><strong>Duration:</strong> 3 Days</p>
+                    <p><strong>Hotel:</strong> 5★ Hotel</p>
+                    <p><strong>Included:</strong> Eve, Breakfast, SPA</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://www.parisperfect.com/blog/wp-content/uploads/2012/01/DSCN4326-1024x787.jpg');">
+                <div class="offer-content">
+                    <h2>Romantic Paris</h2>
+                    <p><strong>Price:</strong> €109</p>
+                    <p><strong>Duration:</strong> 2 Days</p>
+                    <p><strong>Hotel:</strong> 3★ Hotel</p>
+                    <p><strong>Included:</strong> Breakfast</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://www.roadaffair.com/wp-content/uploads/2018/10/view-st-stephans-cathedral-vienna-austria-shutterstock_448349608.jpg');">
+                <div class="offer-content">
+                    <h2>Vienna</h2>
+                    <p><strong>Price:</strong> €205</p>
+                    <p><strong>Duration:</strong> 4 Days in January</p>
+                    <p><strong>Hotel:</strong> 4★ Boutique</p>
+                    <p><strong>Included:</strong> Flight, Tours, Breakfast</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://exp.cdn-hotels.com/hotels/5000000/4780000/4779600/4779598/4cb982e2_z.jpg');">
+                <div class="offer-content">
+                    <h2>Summer in Antalya</h2>
+                    <p><strong>Price:</strong> €599</p>
+                    <p><strong>Duration:</strong> 7 Days</p>
+                    <p><strong>Hotel:</strong> 5★ Hotel</p>
+                    <p><strong>Included:</strong> All Inclusive</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg');">
+                <div class="offer-content">
+                    <h2>Rome in February </h2>
+                    <p><strong>Price:</strong> €199</p>
+                    <p><strong>Duration:</strong> 3 Days</p>
+                    <p><strong>Hotel:</strong> 4★</p>
+                    <p><strong>Included:</strong> Transport,Hotel</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://www.tripsavvy.com/thmb/-UY5RAw2UkQSqHniPHr9kGMLnIE=/2132x1406/filters:fill(auto,1)/GettyImages-1047502134-ebf7496b41e047759046e17b91f57679.jpg');">
+                <div class="offer-content">
+                    <h2>Explore London</h2>
+                    <p><strong>Price:</strong> €499</p>
+                    <p><strong>Duration:</strong> 4 Days</p>
+                    <p><strong>Hotel:</strong> 4★ Central</p>
+                    <p><strong>Included:</strong> Museums, Tours</p>
+                </div>
+            </div>
+            <div class="offer-card" style="background-image: url('https://www.fashion-insider.de/wp-content/uploads/2021/05/barcelona_highlights_sagrada_familia_kathedrale_gaudi_reise_travel_tipp_unspl_9-2048x1364.jpg');">
+                <div class="offer-content">
+                    <h2>Visit Barcelona in March</h2>
+                    <p><strong>Price:</strong> €289</p>
+                    <p><strong>Duration:</strong> 3 Days</p>
+                    <p><strong>Hotel:</strong> 3★</p>
+                    <p><strong>Included:</strong> Transport, Visits</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h1>Sunset Travel</h1>
+        <p class="footer-contact">Contact Us: 📞 +355 69 456 7367</p>
+        <form class="footer-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p class="footer-follow">
+            Follow Us:
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+            </a>
+        </p>
+        <p class="footer-links">
+            <a href="home2.html">Terms and Conditions</a>
+        </p>
+        <p>&copy; Sunset Travel. Book a Unique Experience!</p>
+     <div class="footer-links">
+        <p>Make a Payment</p>
+        <a href="payment.html" target="_blank" class="payment-btn">
+           Tap and pay now
+            </a>
+    </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5991.108158390164!2d19.805557!3d41.340309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310c82160835%3A0xf0338e109bdc8335!2sKolegji%20Universitar%20Bed%C3%ABr!5e0!3m2!1sen!2sus!4v1734642230026!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </footer>
+      <script>
+        const closeBtn = document.querySelector('.close-btn');
+        const adBanner = document.getElementById('advertisement-banner');
+
+        closeBtn.addEventListener('click', () => {
+            adBanner.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
